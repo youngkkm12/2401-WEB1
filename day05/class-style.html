@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일시트</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }    
+    .text-maincolor{color: green;}
+    .text-pointcolor{color: red;}
+    a { 
+        color: black;
+    }
+
+    </style>
+
+</head>
+
+
+<body>
+    <h1>스마트폰 웹 디자인</h1>
+    <!-- ctrl+d : 같은 텍스트 복수선택 -->
+    <h2 class="text-maincolor">Smartphone Web Design</h2>
+    <p class="text-maincolor">
+    스마트폰 가입자가 <span class="text-pointcolor">급속히</span> 증가하는 스마트폰 시대에 맟춰 모바일 기반에 최적화된
+    새로운 UI,UX와 콘텐츠로 구성하여 이용하기 쉽고 데이터 사용도 적은 웹사이트가 
+    제작되고 있습니다.    
+    </p>
+    <!-- css에는 상속되는 속성과 상속되지 않는 속성이 있다. -->
+    <!-- text 관련 태그는 거의다 상속 된다.(color도 상속됨) -->
+    <!-- 하지만 상속받은 속성은 우선순위가 낮다 -->
+    
+    <a href="">여기를 누르면 이동됩니다</a>
+
+    <!-- 아래와 같은경우 a태그는 p태그로부터 color:green을 상속받지만 -->
+    <!-- a태그자체에 color:black이 지정되어있기때문에 -->
+    <!-- 우선순위상 검은색 글씨로 나타난다 -->
+    <p class="text-maincolor">내용을 자세히 확인하려면<a href="#">여기</a>를 클릭하세요</p>
+
+    <!-- 이렇게 지정해주면 초록색 글씨가 된다 -->
+    <p class="text-maincolor">내용을 자세히 확인하려면<a href="#" class="text-maincolor">여기</a>를 클릭하세요</p>
+</body>
+</html>
