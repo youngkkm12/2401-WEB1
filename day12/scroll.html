@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .scroll-box {
+            overflow: scroll;
+            /* 이런식으로 overflow자체에 스크롤 속성을 넣으면
+            x, y 양 방향 스크롤이 생기는 문제가 있다 */
+            width: 200px;
+            height: 200px;
+        }
+
+        .scroll-y-box {
+            width: 200px;
+            height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quo, sapiente dolorem corporis qui est ex consectetur consequuntur quisquam illum illo dolores alias commodi ducimus repudiandae provident nisi omnis culpa?
+    </div>
+
+    <div class="scroll-y-box">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error quis deleniti perspiciatis accusamus nisi saepe doloribus, placeat illum ipsum repellat numquam? Totam, earum molestiae nemo sequi velit sunt repellendus eum!
+    </div>
+</body>
+</html>
