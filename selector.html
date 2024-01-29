@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    * : 전체 선택자. 별표(애스터리스크) 곱하기라는 뜻도있지만, 선택자or이름 적인 관점에서는 '모든것'을 뜻합니다. 우리가 자주하던 * 안에 padding 과 margin 을 0으로 만드는 작성은
+    앞으로 작성될 모든 태그들한테 다 적용하겠다 라는 말과 똑같습니다.
+
+    tag ID class -> 스킵
+
+
+    .container.contents
+    <div class="container content">여기에 적용</div>
+
+    .container > .contents
+    <div class="container">
+        <div class="contents">여기에 적용</div>
+        <div class="inner">
+            <div class="contents">여기엔 적용 안됨</div>
+        </div>
+    </div>
+
+    .container .contents
+    <div class="container">
+        <div class="contents">여기에 적용</div>
+        <div class="inner">
+            <div class="contents">여기에도 적용이 된다.</div>
+        </div>
+    </div>
+
+    .container, .contents
+    <div class="container">여기에 적용</div>
+    <div class="contents">여기에 적용</div>
+
+    .container{width:10px} 
+    .contents{width:10px}
+
+    위와 아래는 같다.
+
+    .container , .contents {
+        width:10px;
+    }
+
+   <input type="text" name=""ID=""class=""my-input>
+
+<!-- css -->
+.my-input{type="password"} {
+    css속성
+}
+속성 선택자는 위와같이 태그에 속성에 따라 css 적용 여부를 결정할수 있지만
+그렇게 자주 쓰이는 방식은 아님.
+
+
+[속성="속성값"] : 특정 속성값을 가지고 있을때
+[속성~="속성값"] : 특정 속성값을 정확히 가지고 있을때
+[속성ㅣ="속성값"] : 속성값으로 시작하는 요소선택(속성값 여러개이면 선택하지않음)
+[속성^="속성값"] : 속성값으로 시작하는 요소 모두 선택
+[속성=&"속성값"] : 속성값으로 끝나는 요소 모두 선택
+[속성=*"속성값"] : 속성값 이라는 문자열을 포함하고 있는것들 전부 선택
+
+글로 정리하면 이런식
+외울필요 없습니다.
+
+
+
+동위선택자(=형제선택자)
+
+<div class="container">
+    <p class="첫째"></p>
+    <p class="둘째"></p>
+    <p class="셋째"></p>
+</div>
+
+동위선택자는 같은 부모 안(같은위치)에 있을때 적성 가능한 방식
+
+<!-- css -->
+.첫째 + .둘째 {
+    A속성
+}
+
+.첫째 + .둘째 {
+    B속성
+}
+
+<div class="container">
+    <p class="첫째"></p>
+    <p class="둘째">A속성으로 적용</p>
+    <p class="셋째">B속성으로 적용되지 않음</p>
+</div>
+
+<span class="첫째"></span>
+<span class="셋째">b속성 적용</span>
+<span class="둘째">a속성 적용되지 않음</span>
+<!-- + 선택자는 같은 위치(동위)에서 연속해서 등장하는 선택자에 속성을 지정한다. -->
+
+.첫째 ~ .셋째 {
+    c속성
+}
+
+<div class="container">
+    <p class="첫째"></p>
+    <p class="둘째"></p>
+    <p class="셋째">c속성적용</p>
+</div>
+
+<!-- {.첫째 ~ .셋째} 에서 ~선택자는 같은위치 에서 첫째 뒤에 등장하는 모든 셋째에 속성을 지정해줍니다. -->
+
+   <hr>
+
+  구조선택자
+
+  앞 : first, last, nth, nty-last
+
+  10th = 10번째
+  nth = n번째
+  그렇기때문에 nth는 뒤에 수열이 붙는다.
+  (3n+1) 이런 수열을 생각해보면
+  n = 0부터 대입해보면 된다
+  n = 0 > 1
+  n = 1 > 4
+  n = 2 > 7
+
+  p:nth-child(3n+1) 이라는 선택자는
+  1,4,7,10... 번째에 등장하는 p태그에 속성을 적용하겠다는 뜻
+
+
+  뒤 : child, of-type
+
+  <hr>
+
+  반응섵액자
+
+  :active > 클릭하고있을때
+  :hover > 마우스가 컨텐츠 위에 있을때
+
+  
+</body>
+</html>
